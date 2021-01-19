@@ -83,7 +83,7 @@ class Main {
                         }
                         break;
                     default: 
-                        System.out.println("Invalid option"); 
+                        System.out.println("Invalid option; Try again"); 
                 }
             }
         }
