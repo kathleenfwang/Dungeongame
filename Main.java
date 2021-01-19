@@ -11,7 +11,7 @@ class Main {
     String[] enemies = {"Zombie", "Skeleton", "Ghost", "Assassin"};
     int maxEnemyHealth = 75;
     int enemyAttackDamage = 25;
-    int escapeRate = 50; 
+    int maxEscapeRate = 100; 
 
     // player variables 
     int killStreak = 0; 
@@ -37,6 +37,8 @@ class Main {
                 System.out.println("\t1. Attack");
                 System.out.println("\t2. Use Potion");
                 System.out.println("\t3. Run!");
+                int enemyEscapeRate = rand.nextInt(maxEscapeRate); 
+                System.out.println("Escape chance: " + enemyEscapeRate); 
 
                 String input = in.nextLine();
                 switch (input) {
@@ -49,6 +51,7 @@ class Main {
                         }
                         else if (health < 0) {
                             System.out.println("You died :(");
+                            running = false; 
                         }
                         else {
                             System.out.println("Congrats! You defeated the " + enemy); 
@@ -74,7 +77,7 @@ class Main {
                     case "3":
                         int escape = rand.nextInt(100); 
                         System.out.println("Your escape chance: " + escape);
-                        if (escape < escapeRate) {
+                        if (escape < enemyEscapeRate) {
                              System.out.println("You run away");
                             enemyHealth = 0;
                         }
