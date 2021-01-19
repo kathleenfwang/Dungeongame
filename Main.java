@@ -14,6 +14,7 @@ class Main {
     int escapeRate = 50; 
 
     // player variables 
+    int killStreak = 0; 
     int health = 100;
     int attackDamage = 50;
     int healthPots = 3;
@@ -51,6 +52,8 @@ class Main {
                         }
                         else {
                             System.out.println("Congrats! You defeated the " + enemy); 
+                            killStreak+=1;
+                            System.out.println("Total kills: " + killStreak);
                             int potion = rand.nextInt(100); 
                             if (potion < healthDropChance) {
                                 System.out.println("You received a potion! Total potions: " + healthPots);
